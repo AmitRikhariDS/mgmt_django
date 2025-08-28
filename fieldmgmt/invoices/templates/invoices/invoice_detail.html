@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Invoice {{ invoice.invoice_number }}</h2>
+<p><strong>Job:</strong> {{ invoice.job }}</p>
+<p><strong>Client:</strong> {{ invoice.client }}</p>
+<p><strong>Status:</strong> {{ invoice.status }}</p>
+<p><strong>Total:</strong> {{ invoice.total }}</p>
+<a href="{% url 'invoices:invoice_list' %}" class="btn btn-secondary">Back</a>
+{% endblock %}

@@ -1,0 +1,22 @@
+# Core framework
+Django>=5.0,<6.0
+djangorestframework>=3.15.0
+
+# Export / Import for CSV & Excel
+django-import-export>=3.3.0
+
+# PDF generation
+WeasyPrint>=61.0
+
+# PostgreSQL driver (for production with RDS)
+psycopg2-binary>=2.9.9
+
+# For environment variable management
+python-decouple>=3.8
+
+# For handling CORS in APIs (optional but useful)
+django-cors-headers>=4.4.0
+
+# For async tasks (future: Celery + Redis if needed)
+celery>=5.4.0
+redis>=5.0.0

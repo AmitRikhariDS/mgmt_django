@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Jobs</h2>
+<a class="btn btn-primary mb-3" href="{% url 'jobs:job_create' %}">+ New Job</a>
+<table class="table">
+  <tr><th>Title</th><th>Client</th><th>Status</th><th>Due Date</th></tr>
+  {% for job in jobs %}
+  <tr>
+    <td><a href="{% url 'jobs:job_detail' job.id %}">{{ job.title }}</a></td>
+    <td>{{ job.client }}</td>
+    <td>{{ job.status }}</td>
+    <td>{{ job.due_date }}</td>
+  </tr>
+  {% empty %}
+  <tr><td colspan="4">No jobs found.</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}

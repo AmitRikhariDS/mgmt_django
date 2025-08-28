@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Invoices</h2>
+<table class="table">
+  <tr><th>Invoice #</th><th>Job</th><th>Client</th><th>Status</th><th>Total</th></tr>
+  {% for invoice in invoices %}
+  <tr>
+    <td><a href="{% url 'invoices:invoice_detail' invoice.id %}">{{ invoice.invoice_number }}</a></td>
+    <td>{{ invoice.job }}</td>
+    <td>{{ invoice.client }}</td>
+    <td>{{ invoice.status }}</td>
+    <td>{{ invoice.total }}</td>
+  </tr>
+  {% empty %}
+  <tr><td colspan="5">No invoices yet.</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}
